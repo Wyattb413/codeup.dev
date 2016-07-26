@@ -1,0 +1,174 @@
+body {
+    background-color: #989c94;
+}
+.navbar-custom .navbar-brand {
+  color: #989c94;
+  font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+}
+.navbar-custom .navbar-nav > .active > a {
+  border-radius: 0;
+  color: white;
+  background-color: #566246;
+}
+/*Resume Section*/
+@media (max-width: 1080px) {
+        #header-info {
+            text-align: center;
+            background-color: #EDE3C2;
+            border-bottom: 5px solid black;
+            height: 25px;
+        }
+        #summary-color {
+            background-color: #EDE3C2;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 6px;
+            padding-top: 6px;
+        }
+        #summary-spacing1 {
+            border-bottom: 5px solid black;
+            padding-left: 337px;
+            padding-top: 5px;
+        }
+        #summary-spacing2 {
+            border-bottom: 5px solid black;
+            padding-right: 314px;
+        }
+        #summary-content {
+            text-align: left;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        #services {
+            padding-top: 50px;
+            padding-bottom: 75px;
+        }
+        #services > div > div.row > div {
+            height: 70px;
+        }
+        #services > div > div.resume-pdf {
+            margin-left: 145px;
+        }
+        #resume-button {
+            text-align: center;
+            margin-left: 500px;
+            margin-top: 50px;
+        }
+}
+    #resume-header {
+        text-align: center;
+    }
+    #header-info {
+        text-align: center;
+        background-color: #EDE3C2;
+        border-bottom: 5px solid black;
+        height: 25px;
+    }
+    #resume-content {
+        text-align: center;
+    }
+    #summary-header {
+        text-align: center;
+
+    }
+    #summary-color {
+        background-color: #EDE3C2;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 6px;
+        padding-top: 6px;
+    }
+    #summary-spacing1 {
+        border-bottom: 5px solid black;
+        padding-left: 426.1px;
+        padding-top: 5px;
+    }
+    #summary-spacing2 {
+        border-bottom: 5px solid black;
+        padding-right: 426.1px;
+    }
+    #summary-content {
+        text-align: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+/*    #google-resume {
+        height: 1000px;
+        width: 850px;
+        margin: auto;
+    }
+    .resume-pdf {
+        height: 300px;
+        width: 351px;
+        margin: auto;
+    } */
+    #services {
+        padding-top: 50px;
+        padding-bottom: 75px;
+    }
+    #services > div > div.row > div {
+        height: 70px;
+    }
+    #services > div > div.resume-pdf {
+        margin-left: 145px;
+    }
+    #resume-button {
+        text-align: center;
+        margin-left: 500px;
+        margin-top: 50px;
+    }
+
+/*Resume Section*/
+
+.timeline > li .timeline-image {
+    background-color: #22333B;
+}
+#about {
+    background-color: #EDE3C2;
+}
+.bg-light-gray {
+    background-color: #566246;
+}
+section#contact {
+  background-color: #000;
+  background-image: url('/img/space-pic2.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 100%;
+}
+header {
+    background-image: url('/img/space-pic3.jpg');
+}
+.btn-xl {
+    background-color: #566246;
+    border-color: #566246;
+}
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus {
+    background-color: #22333b;
+}
+.navbar-custom .navbar-toggle {
+  background-color: #22333B;
+  border-color: #22333B;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  color: white;
+  font-size: 12px;
+}
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus,
+.navbar-custom .navbar-brand:active,
+.navbar-custom .navbar-brand.active {
+  color: #386150;
+}
+/*Submit Button */
+    .btn-xl:hover,
+    .btn-xl:focus,
+    .btn-xl:active,
+    .btn-xl.active,
+    .open .dropdown-toggle.btn-xl {
+      color: white;
+      background-color: #386150;
+      border-color: #386150;
+    }
+/*Submit Button */

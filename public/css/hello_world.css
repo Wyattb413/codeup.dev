@@ -1,0 +1,127 @@
+body {
+	color: #FFF;
+	background-color: maroon;
+	background-image:url(../img/space-pic.jpg);
+	font-family: 'Amatic SC', cursive;;
+	font-size: 1.4em;
+	text-align: center;
+	text-shadow: 1px 1px teal;
+}
+/*Hello From Web Page*/
+	h1 {
+		color: silver;
+		text-decoration: underline;
+	}
+/*Hello From Web Page*/
+
+/*All h2's*/
+	h2 {
+		text-align: center;
+	}
+/*All h2's*/
+
+/*LAMP Stack*/
+	ul {
+		list-style: georgian;
+		text-align: center;
+	}
+	#lamp_list {
+		width: 230px;
+		margin: 0 auto;
+	}
+	#lamp_heading {
+		width: 200px;
+		margin: 0 auto;
+		overflow: 
+	}
+/*LAMP Stack*/
+
+/*Favorite Foods*/
+	ol {
+		list-style: kannada;
+	}
+	#food_list {
+		width: 230px;
+		margin: 0 auto;
+	}
+	#food_heading {
+		width: 200px;
+		margin: 0 auto; 
+	}
+/*Favorite Foods*/
+
+/*Questions I'm Often Asked*/
+	#questions_heading {
+		padding-left: 1500px;
+		margin: 0 auto;
+	}
+	#padding_questions {
+		padding-left: 40px;
+	}
+/*Questions I'm Often Asked*/
+
+/*Favorite Websites*/
+	a:link {
+		color:grey;
+	}
+	a:visited {
+		color:crimson;
+	}
+	a:hover {
+		color: blue;
+	}
+	a:active {
+		color: salmon;
+	}
+	#website_list {
+		width: 225px;
+		margin: 0 auto;
+	}
+	#website_heading {
+		width: 200px;
+		margin: 0 auto; 
+	}
+	#list_content {
+		text-shadow: 0px 0px;
+	}
+/*Favorite Websites*/
+
+/*My Vehicle*/
+	#vehicle_content {
+		background-color:rgba(250,128,114,0.6); 
+	}
+
+/*Conversion Chart*/
+	tr {
+		color: white;
+		background-color: salmon;
+	}
+	table, th, td {
+		border: 1px solid blue;
+	}
+	table {
+		border-collapse: collapse;
+		text-align: center;
+		margin:0 auto;
+	}
+	th, td{
+		text-align: center;
+	}
+	th {
+		padding: 10px;
+	}
+	#chart_title {
+		text-align: center;
+	}
+/*Conversion Chart*/
+
+
+/*Go to Top of the Page*/
+footer {
+	text-align: center;
+}
+#go_to{
+	text-align: center;
+	color: white;
+}
+/*Go to Top of the Page*/

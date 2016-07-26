@@ -1,0 +1,51 @@
+h1 {
+	text-decoration: underline;
+	color: purple;
+	margin-bottom: 50px;
+}
+div {
+	border: 1px solid black;
+	width: 50px;
+	height: 50px;
+	padding: 10px;
+	margin: 10px;
+	margin-left: 50px;
+	color: white;
+	font-weight: bold;
+	font-size: 15px;
+	float: left;
+}
+.red_box {
+	background-color: red;
+	margin-left: 0px;
+	margin-bottom: 50px;
+}
+.orange_box {
+	background-color: orange;
+	/*margin-left: 30px;*/
+	margin-bottom: 50px;
+}
+.yellow_box {
+	background-color: yellow;
+	/*margin-left: 60px;*/
+	margin-bottom: 50px;
+}
+.green_box {
+	background-color: green;
+	/*margin-left: 90px;*/
+	clear: left;
+	margin-left: 0px;
+}
+.blue_box {
+	background-color: blue;
+	/*margin-left: 120px;*/
+}
+.indigo_box {
+	background-color: indigo;
+	/*margin-left: 150px;*/	
+}
+.codeup-arrow {
+	position:relative;
+	left: 39px;
+	bottom: 105px;
+}

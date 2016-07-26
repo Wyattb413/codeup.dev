@@ -1,0 +1,33 @@
+body {
+	margin-top: 70px;
+}
+#header-call {
+	text-align: center;
+}
+.highlight {
+    background-color: yellow;
+}
+.make-this-big {
+    font-size: 1.5em;
+}
+#img-1{
+	margin-left: 0px;
+	margin-right: 0px;
+	height: 500px;
+	width: 500px;
+}
+#img-2{
+	height: 500px;
+	width: 500px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+#img-3{
+	margin-left: 0px;
+	margin-right: 0px;
+	height: 500px;
+	width: 500px;
+}
+.img {
+	max-width: 100%;
+}

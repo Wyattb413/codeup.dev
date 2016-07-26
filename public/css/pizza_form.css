@@ -1,0 +1,37 @@
+/*			#header {
+background-color: red;
+height: 60px;
+margin-bottom: 0px;
+}
+#main_heading {
+padding-top: 10px;
+}
+#main {
+background-color: yellow;
+height: 105px;
+margin-bottom: -10px;
+margin-top: -20px;
+}
+#tops {
+background-color: yellow;
+height: 500px;
+margin-top: -10px;
+margin-bottom: -20px;
+}*/
+/*Pizza Size*/
+	#pizza12 {
+		width: 250px;
+		height: 200px;
+	}
+	#pizza16 {
+		width: 250px;
+		height: 250px;
+	}
+/*Pizza Size*/
+
+/*Pizza Toppings*/
+	#pizza_top {
+		width: 250px;
+		height: 250px;
+	}
+/*Pizza Toppings*/
