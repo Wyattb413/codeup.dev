@@ -1,0 +1,17 @@
+body {
+	background-color: #7BA24B;
+}
+#check-out-more {
+	background-color: #F2F5EF;
+	padding-bottom: 10px;
+	float: right;
+	text-align: center;
+}
+#copyright {
+	padding: 0px;
+	margin-bottom: 0px;
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}

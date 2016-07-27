@@ -298,13 +298,18 @@
                     </row>
                     <p id="resume-content">Proactive, focused, and an enthusiastic individual; interested in pursuing an opportunity to perform in a challenging role within the areas of website development and coding to contribute to prospective company success. Recognized for integrity, solid work ethic, and exemplary dedication to perform beyond established goals and directions. Able to perform diverse functions and follow instructions independently. Articulate communicator with a naturally personable attitude, capable of establishing intuitive connections with diverse individuals. Proficient with Microsoft Office Suite (Excel, PowerPoint, and Word).
                     </p>
-                    <row>
-                        <div id="header-summary">
-                            <div class="col-xs-12" id="summary-header">
-                            <span id="summary-spacing1"></span><span id="summary-color">Summary of Relevant Experince</span><span id="summary-spacing2"></span>
-                            </div>
+                    <h2 id="resume-black-line"><span id="resume-span">Summary of Relevant Experince</span></h2>
+                    <!-- <div class="row">
+                        <div class="col-xs-4">
+                            <div id="resume-black-line"></div>
                         </div>
-                    </row>
+                        <div class="col-xs-4 text-center">
+                            <p>Summary of Relevant Experince</p>
+                        </div>
+                        <div class="col-xs-4">
+                            <div id="resume-black-line"></div>
+                        </div>
+                    </div> -->
                     <p id="summary-content"><strong><em>Problem Solving and Critical Thinking</em></strong> – strong capability to comprehensively evaluate issues and problems to formulate strategic solutions to complex situations; as well as in fully utilizing logic and reasoning to assess strengths and weaknesses of solutions, conclusions, and approaches 
                     <br>
                     <strong><em>Group Collaboration and Teamwork</em></strong> – adeptness in managing group dynamics, as well as in motivating and performing with high-caliber teams of professionals to deliver exceptional results; aptitude to provide guidance and assistance to others to support organizational goals

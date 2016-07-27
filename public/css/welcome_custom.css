@@ -11,50 +11,6 @@ body {
   background-color: #566246;
 }
 /*Resume Section*/
-@media (max-width: 1080px) {
-        #header-info {
-            text-align: center;
-            background-color: #EDE3C2;
-            border-bottom: 5px solid black;
-            height: 25px;
-        }
-        #summary-color {
-            background-color: #EDE3C2;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-bottom: 6px;
-            padding-top: 6px;
-        }
-        #summary-spacing1 {
-            border-bottom: 5px solid black;
-            padding-left: 337px;
-            padding-top: 5px;
-        }
-        #summary-spacing2 {
-            border-bottom: 5px solid black;
-            padding-right: 314px;
-        }
-        #summary-content {
-            text-align: left;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-        #services {
-            padding-top: 50px;
-            padding-bottom: 75px;
-        }
-        #services > div > div.row > div {
-            height: 70px;
-        }
-        #services > div > div.resume-pdf {
-            margin-left: 145px;
-        }
-        #resume-button {
-            text-align: center;
-            margin-left: 500px;
-            margin-top: 50px;
-        }
-}
     #resume-header {
         text-align: center;
     }
@@ -78,33 +34,26 @@ body {
         padding-bottom: 6px;
         padding-top: 6px;
     }
-    #summary-spacing1 {
+    #resume-black-line {
+        width: 100%;
+        text-align: center;
         border-bottom: 5px solid black;
-        padding-left: 426.1px;
-        padding-top: 5px;
+        line-height: .1em;
+        margin: 10px 0 20px;
     }
-    #summary-spacing2 {
-        border-bottom: 5px solid black;
-        padding-right: 426.1px;
+    #resume-span {
+        background: #EDE3C2;
+        padding: 0 10px;
+        font-size: .5em;
     }
     #summary-content {
         text-align: left;
         padding-left: 15px;
         padding-right: 15px;
     }
-/*    #google-resume {
-        height: 1000px;
-        width: 850px;
-        margin: auto;
-    }
-    .resume-pdf {
-        height: 300px;
-        width: 351px;
-        margin: auto;
-    } */
     #services {
         padding-top: 50px;
-        padding-bottom: 75px;
+        padding-bottom: 45px;
     }
     #services > div > div.row > div {
         height: 70px;
@@ -114,8 +63,9 @@ body {
     }
     #resume-button {
         text-align: center;
-        margin-left: 500px;
-        margin-top: 50px;
+        margin: 0 auto;
+        display: block;
+        margin-top: 25px;
     }
 
 /*Resume Section*/
