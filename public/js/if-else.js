@@ -2,11 +2,9 @@
 
 //Grade Problem
 
-var grade1="70"
-var grade2="80"
-var grade3="95"
+var gradeAvg=((70 + 80 + 95) / 3)
 
-if (((grade1 + grade2 + grade3) / 3) >= 80) {
+if (gradeAvg >= 80) {
 	console.log("You're Awesome!")
 } else {
 	console.log("You Need to Practice More!")
@@ -17,28 +15,31 @@ if (((grade1 + grade2 + grade3) / 3) >= 80) {
 var amountRyanPaid=250
 var amountCameronPaid=180
 var amountGeorgePaid=320
+var discount= .35
+var total;
 
 if (amountRyanPaid > 200) {
-	var ryanTotal=(amountRyanPaid - (amountRyanPaid * .35)) 
-	console.log("Amount Ryan Owes" + " $" + amountRyanPaid + ", Discount was Applied" + ", Final Payment: " + "$" + ryanTotal) 
+	total=(amountRyanPaid - (amountRyanPaid * discount)) 
+	console.log("Amount Ryan Owes" + " $" + amountRyanPaid + ", Discount was Applied" + ", Final Payment: " + "$" + parseFloat(total).toFixed(2)) 
 } else {
-	console.log("Amount Ryan Owes" + " $" + amountRyanPaid + ", Discount was Not Applied" + ", Final Payment: " + "$" + ryanTotal) 
+	total=(amountRyanPaid)
+	console.log("Amount Ryan Owes" + " $" + amountRyanPaid + ", Discount was Not Applied" + ", Final Payment: " + "$" + total) 
 }
 
 if (amountCameronPaid > 200) {
-	var cameronTotal=(amountCameronPaid - (amountCameronPaid * .35)) 
-	console.log("Amount Cameron Owes" + " $" + amountCameronPaid + ", Discount was Applied" + ", Final Payment: " + "$" + cameronTotal) 
+	total=(amountCameronPaid - (amountCameronPaid * discount)) 
+	console.log("Amount Cameron Owes" + " $" + amountCameronPaid + ", Discount was Applied" + ", Final Payment: " + "$" + total) 
 } else {
-	var cameronTotal=(amountCameronPaid)
-	console.log("Amount Cameron Owes" + " $" + amountCameronPaid + ", Discount was Not Applied" + ", Final Payment: " + "$" + cameronTotal) 
+	total=(amountCameronPaid)
+	console.log("Amount Cameron Owes" + " $" + amountCameronPaid + ", Discount was Not Applied" + ", Final Payment: " + "$" + total) 
 }
 
 if (amountGeorgePaid > 200) {
-	var georgeTotal=(amountGeorgePaid - (amountGeorgePaid * .35)) 
-	console.log("Amount George Owes" + " $" + amountGeorgePaid + ", Discount was Applied" + ", Final Payment: " + "$" + georgeTotal) 
+	total=(amountGeorgePaid - (amountGeorgePaid * discount)) 
+	console.log("Amount George Owes" + " $" + amountGeorgePaid + ", Discount was Applied" + ", Final Payment: " + "$" + total) 
 } else {
-	var georgeTotal=(amountGeorgePaid - (amountGeorgePaid * .35)) 
-	console.log("Amount Ryan Owes" + " $" + amountRyanPaid + ", Discount was Not Applied" + ", Final Payment: " + "$" + ryanTotal) 
+	total=(amountGeorgePaid - (amountGeorgePaid * discount)) 
+	console.log("Amount Ryan Owes" + " $" + amountRyanPaid + ", Discount was Not Applied" + ", Final Payment: " + "$" + total) 
 }
 
 //Friend Problem
@@ -47,7 +48,6 @@ var flipACoin = Math.floor(Math.random()* 2)
 
 if (flipACoin == 1) {
 	console.log("Buy a House")
-} 
-if (flipACoin == 0) {
+} else {
 	console.log("Buy a Car")
 }
