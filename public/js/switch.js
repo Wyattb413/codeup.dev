@@ -4,25 +4,26 @@
 
 var luckyNumber = Math.floor(Math.random()* 6);
 var amountPaid = 60;
+var discountPercentage;
 
 switch (luckyNumber) {
 	case 0:
 		console.log("You Get No Discount");
 	break;
 	case 1:
-		amountPaid = (amountPaid - (amountPaid * .1))
+		amountPaid = (amountPaid - (amountPaid * discountPercentage = .1))
 		console.log("You Get 10% Off!" + " Amount You Owe: $" + amountPaid);
 	break;
 	case 2:
-		amountPaid = (amountPaid - (amountPaid * .2))
+		amountPaid = (amountPaid - (amountPaid * discountPercentage = .2))
 		console.log("You Get 20% Off!" + " Amount You Owe: $" + amountPaid);
 	break;
 	case 3:
-		amountPaid = (amountPaid - (amountPaid * .35))
+		amountPaid = (amountPaid - (amountPaid * discountPercentage = .35))
 		console.log("You Get 35% Off!" + " Amount You Owe: $" + amountPaid);
 	break;
 	case 4:
-		amountPaid = (amountPaid - (amountPaid * .5))
+		amountPaid = (amountPaid - (amountPaid * discountPercentage = .5))
 		console.log("You Get 50% Off!" + " Amount You Owe: $" + amountPaid);
 	break;
 	case 5:
