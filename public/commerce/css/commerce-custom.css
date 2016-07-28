@@ -15,3 +15,7 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
+#hottest-header {
+	text-align: center;
+	color: #F2F5EF;
+}
