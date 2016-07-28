@@ -37,3 +37,9 @@ body {
 aside a {
 	color: blue;
 }
+#login-jumbo {
+	background-image: url("../pics/matrix.jpg");
+}
+#login-header {
+	color: white;
+}
