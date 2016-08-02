@@ -8,4 +8,13 @@
     	for (var i = 0; i <= names.length; i++) {
     		console.log(names[i]);
     	}
+    //Array in reverse order
+    	var namesInReverseOrder = names.reverse();
+    	for (var i = 0; i <= namesInReverseOrder.length; i++) {
+    		console.log(namesInReverseOrder[i]);
+    	}
+    //For each
+    	names.forEach(function(element, index, array) {
+    		console.log(element)
+    	});
 })();
