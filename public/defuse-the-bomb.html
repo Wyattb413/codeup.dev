@@ -21,12 +21,12 @@
             alert('EXTERMINATE!');
             document.body.innerHTML = '';
         } else if (detonationTimer > 0) {
-            document.getElementById('timer').innerHTML = detonationTimer;
         }
 
         detonationTimer--;
+        document.getElementById('timer').innerHTML = detonationTimer;
     }
-    updateTimer();
+    // updateTimer();
     var bomtimer = setInterval(updateTimer, 1000);
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
