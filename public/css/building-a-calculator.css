@@ -1,0 +1,19 @@
+.inputFields {
+	margin-bottom: 3px;
+}
+#input1 {
+	width: 7.5%;
+}
+#input2 {
+	width: 4%;
+}
+#input3 {
+	width: 7.5%;
+}
+.calc-row {
+	font-size: 15px;
+	padding: 10px;
+	width: 5%;
+	margin-bottom: 3px;
+
+}
