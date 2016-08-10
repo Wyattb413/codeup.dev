@@ -58,16 +58,16 @@
 
 
 
-    (function() {
+    // (function() {
         "use strict";
-        var bool = false;
-        function toggleStuff(element, color1, color2){
-            if(bool) {
+        var bool1 = false;
+        function toggleBlue(element, color1, color2){
+            if (bool1) {
                 element.style.color = color1;
-                bool  = false;
+                bool1  = false;
             } else {
                 element.style.color = color2;
-                bool = true;
+                bool1 = true;
             }
         }
         // TODO: Uncomment next line and get the main header element by id
@@ -89,7 +89,7 @@
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        var redButton = function (click) {
+        var redButton = function(click) {
             if (mainHeader.innerHTML == "JavaScript is Coolio!") {
                 mainHeader.innerHTML = "Hello World!";
             } else if (mainHeader.innerHTML == "Hello World!") {
@@ -97,13 +97,11 @@
             }
         } 
 
-        var blueButton = function (click) {
-            toggleStuff(subHeader, "black", "blue");
+        var blueButton = function(click) {
+            toggleBlue(subHeader, "black", "blue");
         } 
 
-
-        //classList.add classList.remove
-        var greenButton = function (click) {
+        var greenButton = function(click) {
             for (var i = 1; i < listItems.length; i+=2)
             {
                 listItems[i].style.color='grey';   
@@ -113,7 +111,8 @@
                 listItems[0].style.color = "blue";
             }
         } 
-        var pinkButton = function (click) {
+
+        var pinkButton = function(click) {
             subParagraphs[0].innerText = "Mission Accomplished!";
         } 
 
@@ -121,7 +120,7 @@
         document.getElementById("blue").addEventListener("click", blueButton);
         document.getElementById("green").addEventListener("click", greenButton);
         document.getElementById("pink").addEventListener("click", pinkButton);
-    })();
+    // })();
 </script>
 </body>
 </html>

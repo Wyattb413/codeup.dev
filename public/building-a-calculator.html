@@ -2,43 +2,136 @@
 <html>
 <head>
 	<title>A Calculator App</title>
+	<link href='https://fonts.googleapis.com/css?family=Alex+Brush' rel='stylesheet' type='text/css'>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="/css/building-a-calculator.css">
 </head>
 <body>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- Header -->
+
 	<div>
-		<input class="inputFields" id="input1" type="text" readonly>
-		<input class="inputFields" id="input2" type="text" readonly>
-		<input class="inputFields" id="input3" type="text" readonly>
-	</div>
-	<div>
-		<button type="button" class="calc-row">1</button>
-		<button type="button" class="calc-row">2</button>
-		<button type="button" class="calc-row">3</button>
-		<button type="button" class="calc-row">+</button>
-	</div>
-	<div>
-		<button type="button" class="calc-row">4</button>
-		<button type="button" class="calc-row">5</button>
-		<button type="button" class="calc-row">6</button>
-		<button type="button" class="calc-row">-</button>
-	</div>
-	<div>
-		<button type="button" class="calc-row">7</button>
-		<button type="button" class="calc-row">8</button>
-		<button type="button" class="calc-row">9</button>
-		<button type="button" class="calc-row">*</button>
-	</div>
-	<div>
-		<button type="button" class="calc-row">C</button>
-		<button type="button" class="calc-row">0</button>
-		<button type="button" class="calc-row">=</button>
-		<button type="button" class="calc-row">/</button>
+		<h1 class="main-header" id="header-black-line"><span id="header-span">A Simple JavaScript Calculator</span></h1>
 	</div>
 
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- Input boxes -->
 
+	<div id="input-boxes-div">
+		<input class="inputFields  operantStyle" id="operant1" type="text" readonly>
+		<input class="inputFields  operatorStyle" id="operator" type="text" readonly>
+		<input class="inputFields  operantStyle" id="operant2" type="text" readonly>
+	</div>
 
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- Calculator Buttons -->
+<!-- ============================================================================================================== -->
+	<!-- First Row of Buttons-->
 
+		<div>
+			<button type="button" class="operatorNumber buttonDesign leftButtons" value="1" id="1">1</button>
+			<button type="button" class="operatorNumber buttonDesign" value="2" id="2">2</button>
+			<button type="button" class="operatorNumber buttonDesign" value="3" id="3">3</button>
+			<button type="button" class="operantSign buttonDesign" value="+" id="+">+</button>
+		</div>
+
+<!-- ============================================================================================================== -->
+	<!-- Second Row of Buttons-->
+
+		<div>
+			<button type="button" class="operatorNumber buttonDesign leftButtons" value="4" id="4">4</button>
+			<button type="button" class="operatorNumber buttonDesign" value="5" id="5">5</button>
+			<button type="button" class="operatorNumber buttonDesign" value="6" id="6">6</button>
+			<button type="button" class="operantSign buttonDesign" value="-" id="-">-</button>
+		</div>
+
+<!-- ============================================================================================================== -->
+	<!-- Third Row of Buttons-->
+
+		<div>
+			<button type="button" class="operatorNumber buttonDesign leftButtons" value="7" id="7">7</button>
+			<button type="button" class="operatorNumber buttonDesign" value="8" id="8">8</button>
+			<button type="button" class="operatorNumber buttonDesign" value="9" id="9">9</button>
+			<button type="button" class="operantSign buttonDesign" value="*" id="*">*</button>
+		</div>
+
+<!-- ============================================================================================================== -->
+	<!-- Fourth Row of Buttons-->
+
+		<div>
+			<button type="button" class="clearAll buttonDesign leftButtons" value="clearAll" id="clearAll">AC</button>
+			<button type="button" class="operatorNumber buttonDesign" value="0" id="0">0</button>
+			<button type="button" class="equals buttonDesign" value="=" id="equals">=</button>
+			<button type="button" class="operantSign buttonDesign" value="/" id="/">/</button>
+		</div>
+
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- Modal -->
+<!-- ============================================================================================================== -->
+	<div id="zero-modal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+		<!-- Modal Content -->
+			<div class="modal-content">
+				<div class="modal-header modal-header-footer-design">
+					<h4 class="modal-title">No.</h4>
+				</div>
+				<div class="modal-body">
+					<p>
+						 Your efforts to break the laws of physics have been noted
+						 and reported to the appropriate authorities.
+						 For your safety and the continuation of our Universe,
+						 please do not try that again.
+					</p>
+				</div>
+				<div class="modal-footer modal-header-footer-design">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Reconsider</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- Modal -->
+<!-- ============================================================================================================== -->
+	<div id="first-operant-modal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+		<!-- Modal Content -->
+			<div class="modal-content">
+				<div class="modal-header modal-header-footer-design">
+					<h4 class="modal-title">Hello!</h4>
+				</div>
+				<div class="modal-body">
+					<p>
+						 Try entering a first operant!
+					</p>
+				</div>
+				<div class="modal-footer modal-header-footer-design">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Try Again</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- CDN's for Modal -->
+<!-- ============================================================================================================== -->
+	<!-- Jquery CDN -->
+
+	<script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+
+<!-- ============================================================================================================== -->
+
+	<!-- Bootstrap CDN -->
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- JavaScript Script Tag -->
 
 	<script src="/js/building-a-calculator.js"></script>
+
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 </body>
 </html>
