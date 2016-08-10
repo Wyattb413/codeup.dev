@@ -1,1 +1,36 @@
-google-maps.css
+#map-canvas {
+    /*width: 770px;*/
+    height: 100%;
+}
+html, body {
+	height: 100%;
+}
+#contentString {
+	display: none;
+	background-color: #D8272D;
+	height: 400px;
+}
+#resturantHeader {
+	text-align: center;
+	margin: 0;
+	background-color: #D8272D;
+	color: white;
+	padding: 2px;
+}
+#headerHr {
+	margin: 0;
+}
+#fazolis-pic {
+	display: block;
+	margin: 0 auto;
+}
+#restaurant-content {
+	background-color: #D8272D;
+	margin: 0;
+	font-size: 15px;
+	color: white;
+	padding: 5px;
+}
+#pic-div {
+	background-color: #A8AD36;
+}

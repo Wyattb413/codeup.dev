@@ -2,10 +2,24 @@
 <html>
 <head>
 	<title>My Google Maps</title>
+	<link rel="stylesheet" type="text/css" href="/css/google-maps.css">
 </head>
 <body>
+    <!-- div to hold map -->
+    <div id="map-canvas"></div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASxk9JjagMKxk2PkyJ-ckqSg2z8N5J9SY"></script>
-<script src="google-maps.js"></script>
+    <div id="contentString">
+    <h3 id="resturantHeader">Fazoli's</h3><hr id="headerHr">
+    <div id="pic-div">
+    <img src="/img/fazolis.jpg" id="fazolis-pic">
+    </div>
+    <p id="restaurant-content">Breaksticks that will not only give you diabetes, but will have you begging to take some to-go.<br>
+    Fast italian restaurant that serves a multitude of delicious italian cuisine
+    </p>
+    </div>
+
+    <!-- Load the Google Maps API [DON'T FORGET TO USE A KEY] -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASxk9JjagMKxk2PkyJ-ckqSg2z8N5J9SY"></script>
+	<script src="/js/google-maps.js"></script>
 </body>
 </html>
