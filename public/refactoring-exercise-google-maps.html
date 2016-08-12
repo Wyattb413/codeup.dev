@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #my-map {
+            width: 750px;
+            height: 500px;
+            border: 1px solid black;
+            margin: 1.5em 0;
+        }
+        button {
+            margin: 0 10px;
+            background: navy;
+            color: white;
+            padding: 10px 15px;
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Google Maps Api</h1>
+
+<!-- <label for="change-zoom">Change Zoom Level</label> -->
+<select id="change-zoom">
+<option disabled selected>Change Zoom Level</option>
+
+
+</select>
+<button id="zoom-btn">Change It!</button>
+
+
+<div id="my-map"></div>
+
+<button id="place-marker">Place The Marker</button>
+<button id="open-info-window">Open the info window</button>
+
+<script src="/js/jquery-1.12.4.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASxk9JjagMKxk2PkyJ-ckqSg2z8N5J9SY"></script>
+<script src="/js/refactoring-exercise-google-maps.js"></script>
+
+</body>
+</html>
