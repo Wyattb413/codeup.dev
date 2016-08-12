@@ -9,21 +9,34 @@
 //Changes color of main-header
 	$("#main-header").css("color", "#288C85");
 
+//Changes font color of entire page
+	$('body').css('color', 'white');
+
+//Changes background color of entire page
+	$('body').css('background-color', 'black');
+
 //Alerts main-header
 	// $(function() {
 	// 	alert($("#main-header").text());
 	// });
 
 //Creates border around class "codeup"
-	$(".codeup").css("border", "1px solid red");
-	$(".codeup").css("outline-style", "double");
+	$('.codeup').css({
+		"border" : "2px solid red",
+		"outline-style" : "double",
+		"outline-color" : "black"
+	});
 
 //Sets font size of li elements to 20px
 	$("li").css("font-size", "20px");
 
 //Highlights all h1, p, li in yellow
-	$("#span-background-color").css("background-color", "black");
-	$("#span-background-color").css("color", "white");
+	$("#span-background-color").css({
+		"background-color" : "#7E8C62",
+		"color" : "white"
+	});
+	// $("#span-background-color").css("background-color", "#7E8C62");
+	// $("#span-background-color").css("color", "white");
 
 //Alerts h1 elements
 	// $(function(){
@@ -31,7 +44,7 @@
 	// });
 
 //Sets background image
-	$("body").css('background-image', 'url("/img/upfeathers.png")');
+	$("body").css('background-image', 'url("/img/dark-embro.png")');
 
 //Changes color of h1 on click
 	$('#main-header').click(function(){
@@ -101,11 +114,27 @@
 
 	});
 
-
 //Display Definition Definiton When Definition Title is DblClicked
 	$('#showAllAnswers').click(function(event){
 		$('.invisible').toggle();
 	});
 
+//Adds Rainbow text class
+	$('.invisible').addClass('rainbow')
 
+//Selects first <li> in <ul> and sets font weight to bold
+	$('.font-weight-bold').each(function(){
+		$(this).children().first().css('font-weight', 'bold');
+	})
+
+//Adds invisible class to any parent <ul> of any <li> clicked
+	$('#parks-national').click(function(event){
+		$('#national-parks').children().toggle('.invisible-list')
+	})
+	$('#parks-texas').click(function(event){
+		$('#state-parks-texas').children().toggle('.invisible-list')
+	})
+	$('#parks-hawaii').click(function(event){
+		$('#state-parks-hawaii').children().toggle('.invisible-list')
+	})
 // });
