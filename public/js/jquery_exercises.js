@@ -77,9 +77,10 @@ var userInputArray = [];
 		if(lengthOfKeyCode == 11){
 			userInputArray = keyEntered.split(',');
 			if(JSON.stringify(correctSequence) == JSON.stringify(userInputArray)){
-			    alert('Collections are equal');
+			    // alert('Collections are equal');
+			    $("#game-div").removeClass("hidden");
 			}else{
-			    alert('Collections are not equal');
+			    alert('You failed in the Konami Ways');
 			}
 			userInputArray = [];
 			keyEntered = '';
@@ -90,15 +91,7 @@ var userInputArray = [];
 		console.log(userInputArray);
 	})
 
-	// $(document).keyup(function(event){
-	// 	if(readKeyUp === correctSequence){
-	// 		alert("You Got It Correct!");
-	// 	}
-	// 	console.log(readKeyUp);
-	// });
-
-
-
+	//Konami Easter Egg (Game)
 
 	// {
  //            console.log(event.keyCode);
