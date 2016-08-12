@@ -44,7 +44,7 @@
 	})
 
 //Changes color of list items on hover
-	$('li').hover(
+	$('.firstList').hover(
 		function() {
 			$(this).css("color", "red");
 		},
@@ -61,41 +61,40 @@
 }
 
 //Konami Code
-var correctSequence = ["38", "38", "40", "40", "37", "39", "37", "39", "66", "65", "13"];
-var readKeyUp = $(document).keyup(function(event){});
-var keyEntered = '';
-var lengthOfKeyCode = keyEntered.length;
-var userInputArray = [];
+	var correctSequence = ["38", "38", "40", "40", "37", "39", "37", "39", "66", "65", "13"];
+	var readKeyUp = $(document).keyup(function(event){});
+	var keyEntered = '';
+	var lengthOfKeyCode = keyEntered.length;
+	var userInputArray = [];
 
-	$(document).keyup(function(event){
-		if(lengthOfKeyCode <= 9){
-			keyEntered += (event.keyCode + ',');
-		} else {
-			keyEntered += (event.keyCode);
-		}
-		lengthOfKeyCode ++;
-		if(lengthOfKeyCode == 11){
-			userInputArray = keyEntered.split(',');
-			if(JSON.stringify(correctSequence) == JSON.stringify(userInputArray)){
-			    // alert('Collections are equal');
-			    $("#game-div").removeClass("hidden");
-			}else{
-			    alert('You failed in the Konami Ways');
+		$(document).keyup(function(event){
+			if(lengthOfKeyCode <= 9){
+				keyEntered += (event.keyCode + ',');
+			} else {
+				keyEntered += (event.keyCode);
 			}
-			userInputArray = [];
-			keyEntered = '';
-			lengthOfKeyCode = 0;
-		};
-		console.log(lengthOfKeyCode);
-		// console.log(keyEntered);
-		console.log(userInputArray);
-	})
+			lengthOfKeyCode ++;
+			if(lengthOfKeyCode == 11){
+				userInputArray = keyEntered.split(',');
+				if(JSON.stringify(correctSequence) == JSON.stringify(userInputArray)){
+				    // alert('Collections are equal');
+				    $("#game-div").removeClass("hidden");
+				}else{
+				    alert('You failed in the Konami Ways');
+				}
+				userInputArray = [];
+				keyEntered = '';
+				lengthOfKeyCode = 0;
+			};
+			console.log(lengthOfKeyCode);
+			// console.log(keyEntered);
+			console.log(userInputArray);
+		})
 
-	//Konami Easter Egg (Game)
-
-	// {
- //            console.log(event.keyCode);
- //        });
+//Display Definition Definiton When Definition Title is DblClicked
+	$('#showAllAnswers').click(function(event){
+		$('.invisible').toggle();
+	});
 
 
 // });
