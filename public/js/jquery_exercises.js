@@ -31,12 +31,11 @@
 	$("li").css("font-size", "20px");
 
 //Highlights all h1, p, li in yellow
-	$("#span-background-color").css({
+	$("#div-background-color").css({
 		"background-color" : "#7E8C62",
-		"color" : "white"
+		"color" : "white",
+		"text-align" : "center"
 	});
-	// $("#span-background-color").css("background-color", "#7E8C62");
-	// $("#span-background-color").css("color", "white");
 
 //Alerts h1 elements
 	// $(function(){
@@ -129,12 +128,16 @@
 
 //Adds invisible class to any parent <ul> of any <li> clicked
 	$('#parks-national').click(function(event){
-		$('#national-parks').children().toggle('.invisible-list')
+		// $('#national-parks').children().toggle('.invisible-list')
+		$('#national-parks').children().slideToggle();
 	})
 	$('#parks-texas').click(function(event){
-		$('#state-parks-texas').children().toggle('.invisible-list')
+		// $('#state-parks-texas').children().toggle('.invisible-list')
+		$('#state-parks-texas').children().slideToggle();
 	})
 	$('#parks-hawaii').click(function(event){
-		$('#state-parks-hawaii').children().toggle('.invisible-list')
+		// $('#state-parks-hawaii').children().toggle('.invisible-list')
+		$('#state-parks-hawaii').children().slideToggle();
 	})
+
 // });
