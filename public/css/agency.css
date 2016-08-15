@@ -11,7 +11,8 @@ body {
   color: #777777;
 }
 .text-primary {
-  color: #fed136;
+  /*color: #fed136;*/
+  color: #E0E0E0;
 }
 p {
   font-size: 14px;
@@ -28,7 +29,7 @@ a.active {
   outline: none;
 }
 a {
-  color: #fed136;
+  color: #E0E0E0;
 }
 a:hover,
 a:focus,

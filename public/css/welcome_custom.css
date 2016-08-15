@@ -1,5 +1,6 @@
 body {
-    background-color: #989c94;
+    /*background-color: #989c94;*/
+    background-color: #746E57;
 }
 .navbar-custom .navbar-brand {
   color: #989c94;
@@ -10,6 +11,10 @@ body {
   color: white;
   background-color: #566246;
 }
+.text-muted {         /*Color for text on whole document, not including resume sub-header*/
+  color: #a94442;
+}
+
 /*Resume Section*/
     #resume-header {
         text-align: center;
@@ -22,6 +27,7 @@ body {
     }
     #resume-content {
         text-align: center;
+        color: #E0E0E0;
     }
     #summary-header {
         text-align: center;
@@ -50,6 +56,7 @@ body {
         text-align: left;
         padding-left: 15px;
         padding-right: 15px;
+        color: #E0E0E0;
     }
     #services {
         padding-top: 50px;
@@ -66,6 +73,7 @@ body {
         margin: 0 auto;
         display: block;
         margin-top: 25px;
+        color: #337ab7;
     }
 
 /*Resume Section*/
@@ -73,21 +81,30 @@ body {
 .timeline > li .timeline-image {
     background-color: #22333B;
 }
+
+.text-muted-portfolio {
+  color: #f0f1ef;
+}
+
 #about {
-    background-color: #EDE3C2;
+    /*background-color: #EDE3C2;*/
+    background-color: #F4D49C;
+
 }
 .bg-light-gray {
     background-color: #566246;
 }
 section#contact {
   background-color: #000;
-  background-image: url('/img/space-pic2.jpg');
+  /*background-image: url('/img/space-pic2.jpg');*/
+  background-image: url('/img/space-pic4.jpg');
   background-position: center;
   background-repeat: no-repeat;
   max-width: 100%;
+  max-height: 100%;
 }
 header {
-    background-image: url('/img/space-pic3.jpg');
+    background-image: url('/img/skyship.jpg');
 }
 .btn-xl {
     background-color: #566246;

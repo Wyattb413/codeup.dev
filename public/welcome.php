@@ -178,7 +178,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading"> My Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Take a look at my on-going projects.</h3>
+                    <h3 class="section-subheading text-muted-portfolio">Take a look at my on-going projects.</h3>
                 </div>
             </div>
             <div class="row">
