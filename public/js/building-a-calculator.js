@@ -100,7 +100,14 @@
                         }
                         break;
                 }
-                document.getElementById("operant1").value = result;
+                if (numberValue2 == ""){/*check if operant 2 has be entered if equals has been pressed*/
+                    $('#second-operant-modal').modal('show');
+                } else if (numberValue2 != 0){/*Checks if divide by 0 was entered and clear left operant instead of displaying result*/
+                    document.getElementById("operant1").value = result;
+                } else {
+                    document.getElementById("operant1").value = "";
+                }
+
                 document.getElementById("operant2").value = "";
             }
 
@@ -114,9 +121,5 @@
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 // To Do's: 
 
-//math object for switch statement
-//divide by 0 - operant 1 remains infinity 
-//modal for no 2nd operant
-//if click operator first, lets put operant2...equates to NaN
 //add keyup listener to insert numbers in 1st and 3rd input fields
 //add key up listener to insert signs in 2nd input field
