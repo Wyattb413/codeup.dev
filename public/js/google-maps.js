@@ -6,20 +6,35 @@
     // Set our map options
     var mapOptions = {
         // Set the zoom level
-        zoom: 18,
+        zoom: 7,
     };
 
     // Render the map
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-    var address = "927 TX-80, San Marcos, TX 78666";
-    // var address = "Burglengenfeld, Germany"
+	// var location1 = "927 TX-80, San Marcos, TX 78666";
+	// var location2 = "Dr.-Sauerbruch-Straße 1, 93133 Burglengenfeld, Germany";
+	// var location3 = "1914 Laivita Mist, San Antonio, TX 78251";
+
+	var locations = [
+		// "Dr.-Sauerbruch-Straße 1, 93133 Burglengenfeld, Germany",
+		"410 Bagby St, Houston, TX 77002",
+		"1914 Laivita Mist, San Antonio, TX 78251",
+		"927 TX-80, San Marcos, TX 78666"
+	]
+
+	var dropPinImg = [
+		"/img/fish.png",
+		"/img/house.png",
+		"/img/fazolis-logo.png"
+	]
 
 	// Init geocoder object
 	var geocoder = new google.maps.Geocoder();
 
 	// Geocode our address
-	geocoder.geocode({ "address": address }, function(results, status){
+	for(var i = 0; i <= 2; i+= 1){
+	geocoder.geocode({ "address": locations[i] }, function(results, status){
 
 	   // Check for a successful result
 	   if (status == google.maps.GeocoderStatus.OK) {
@@ -33,13 +48,32 @@
 	   }
 		var favRestaurant = results[0].geometry.location;
 
-		// Add the marker to our existing map
-		var marker = new google.maps.Marker({
-		    position: favRestaurant,
-		    map: map,
-		    icon: "/img/fazolis-logo.png",
-		    animation: google.maps.Animation.DROP
+			var dropPins = dropPinImg[2];
+			var marker = new google.maps.Marker({
+			    position: favRestaurant,
+			    map: map,
+			    icon: dropPins,
+			    animation: google.maps.Animation.DROP
+			});
+
+
+		var contentString = document.getElementById("contentString").innerHTML;
+
+		// Create a new infoWindow object with content
+		var infowindow = new google.maps.InfoWindow({
+		    content: contentString
 		});
+
+
+		marker.addListener('click', function () {
+			if (!infowindowHasBeenOpened) {
+				infowindow.open(map, marker);
+				infowindowHasBeenOpened = true
+			} else if (infowindowHasBeenOpened) {
+				infowindow.close();
+				infowindowHasBeenOpened = false
+			}
+		})
 
 		var contentString = document.getElementById("contentString").innerHTML;
 
@@ -60,6 +94,11 @@
 		})
 
 	})
+	}
 
 
 // })();
+
+//To Do's
+
+//Add multiple locations (x3)
