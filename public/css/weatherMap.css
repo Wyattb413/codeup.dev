@@ -1,0 +1,28 @@
+.containerCentered {
+	text-align: center;	
+}
+
+.weatherDay {
+	float: left;
+	height: 250px;
+	width: 250px;
+	background-color: skyblue;
+}
+#firstDay {
+	margin-left: 1em;
+}
+#secondDay {
+	
+}
+#thirdDay {
+	
+}
+#fourthDay {
+	
+}
+#fifthDay {
+	
+}
+.inputFields {
+	margin-top: 4px;
+}
