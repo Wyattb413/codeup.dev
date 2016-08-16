@@ -115,6 +115,23 @@
             if (equals) {
                 equals.addEventListener("click", equatesTo);
             }
+
+     <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+     //*checking if * / - + has been pressed*//
+     var opperatorsKeyValues = {
+        187: "+",
+        189: "-",
+        191: "/",
+
+     }
+
+     $(document).keyup(function(event){
+            console.log(event);
+        });
+
+
+
 // })();
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
@@ -123,3 +140,42 @@
 
 //add keyup listener to insert numbers in 1st and 3rd input fields
 //add key up listener to insert signs in 2nd input field
+
+    // var codeIndex = 0;
+
+    // var konamiKeysValues = {
+    //     up: 38,
+    //     down: 40,
+    //     left: 37,
+    //     right: 39,
+    //     b: 66,
+    //     a: 65,
+    //     enter: 13
+    // };
+
+    // var konamiCode = [
+    //     konamiKeysValues.up,
+    //     konamiKeysValues.up,
+    //     konamiKeysValues.down,
+    //     konamiKeysValues.down,
+    //     konamiKeysValues.left,
+    //     konamiKeysValues.right,
+    //     konamiKeysValues.left,
+    //     konamiKeysValues.right,
+    //     konamiKeysValues.b,
+    //     konamiKeysValues.a,
+    //     konamiKeysValues.enter
+    // ];
+
+    // $(document).keyup(function(event){
+    //     if(event.keyCode == konamiCode[codeIndex]) {
+    //         codeIndex += 1;
+    //     } else {
+    //         codeIndex = 0;
+    //     }
+    
+    //     if (codeIndex == konamiCode.length) {
+    //         $("#game-div").removeClass("hidden");
+    //     }
+
+    // });
