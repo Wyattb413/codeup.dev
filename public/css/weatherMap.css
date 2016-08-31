@@ -1,3 +1,6 @@
+body {
+	background-color: skyblue;
+}
 .containerCentered {
 	text-align: center;	
 }
@@ -6,23 +9,38 @@
 	float: left;
 	height: 250px;
 	width: 250px;
-	background-color: skyblue;
+	background-color: lightgrey;
+	border:1px solid black;
 }
 #firstDay {
 	margin-left: 1em;
+	height: 400px;
 }
 #secondDay {
-	
+	height: 400px;
 }
 #thirdDay {
-	
+	height: 400px;
 }
 #fourthDay {
-	
+	height: 400px;
 }
 #fifthDay {
-	
+	height: 400px;
 }
 .inputFields {
-	margin-top: 4px;
+	height: 400px;
 }
+#map-canvas {
+	width: 770px;
+	height: 481px;
+	background-color: grey;
+	margin-left: 18em;
+}
+
+#video {
+    top: 0; 
+    left:0;
+    width: 100%; 
+    height: 100%; 
+}  
