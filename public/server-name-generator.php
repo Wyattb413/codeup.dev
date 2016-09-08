@@ -1,35 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Server Name Generator</title>
-
-	<style type="text/css">
-		
-		body {
-			background-color: black;
-			background-image: url(/img/clouds.jpeg);
-			background-size: cover;
-			color: white;
-			text-align: center;
-			padding-top: 7%;
-		}
-
-		.rainbow {
-		  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
-		  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
-		  color:transparent;
-		  -webkit-background-clip: text;
-		  background-clip: text;
-		}
-
-	</style>
-
-</head>
-<body>
-
-	<h1><span class="rainbow">Five Randomly Generated Server Names!</span></h1>
-
-	<?php 
+<?php 
 
 		function getAdjective() 
 		{
@@ -67,24 +36,59 @@
 			
 		}
 
-		$randomAdjective = getAdjective();
-		$randomNoun = getNoun();
+		function generateServerName() {
+			$newArry = [];
 
-		$randomlyGeneratedServerName = $randomAdjective . ' ' . $randomNoun . PHP_EOL;
-	?>
-		<?php for ($i=1; $i <= 5 ; $i++): ?>
-			<li><?= $randomlyGeneratedServerName; ?></li>
-		<?php 
-			$randomAdjective = getAdjective();
-			$randomNoun = getNoun();
-			$randomlyGeneratedServerName = $randomAdjective . ' ' . $randomNoun . PHP_EOL;
-			?>
-		<?php endfor; ?>
+			$newArry['randomAdjective'] = getAdjective();
+			$newArry['randomNoun'] = getNoun();
+			$newArry['randomlyGeneratedServerName'] = $newArry['randomAdjective'] . ' ' . $newArry['randomNoun'] . PHP_EOL;
 
+			return $newArry['randomlyGeneratedServerName'];
+		}
 
+		function pageController($serverName){
+			$someArry = [];
+			$someArry['serverName'] = $serverName;
+			return $someArry;
+		}
 
+		$generatedServerName = generateServerName();
+		extract(pageController($generatedServerName));
+?>
+		
 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Server Name Generator</title>
 
+	<style type="text/css">
+		
+		body {
+			background-color: black;
+			background-image: url(/img/clouds.jpeg);
+			background-size: cover;
+			color: white;
+			text-align: center;
+			padding-top: 7%;
+		}
+
+		.rainbow {
+		  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+		  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+		  color:transparent;
+		  -webkit-background-clip: text;
+		  background-clip: text;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<h1><span class="rainbow">Randomly Generated Server Name!</span></h1>
+
+			<li><?= $serverName; ?></li>
 
 </body>
 </html>
