@@ -35,6 +35,16 @@ extract(pageCtrl());
 				transform: rotate(-40deg);
 			}
 
+			.paddleRotate {
+				animation-name: rotatePaddle;
+				animation-duration: 3s;
+			}
+
+			@keyframes rotatePaddle {
+				from {transform:rotate(0deg);}
+			    to {transform:rotate(360deg);}
+			}
+
 			.ball {
 				position: absolute;
 				margin-top: -200px;
@@ -143,11 +153,7 @@ extract(pageCtrl());
 			<img src="/img/tennisnet.png" class="tennisnet">
 			<a href="http://codeup.dev/pong.php?volleyCount=<?= $volleyCount + 1 ?>" class="paddle" id="paddle">
 				<div id="dom-target" style="display: none;">
-				    <?php 
-				        $output = $volleyCount + 1; //Again, do some operation, get the output.
-				        echo htmlspecialchars($output); /* You have to escape because the result
-				                                           will not be valid HTML otherwise. */
-				    ?>
+				    <?php $output = $volleyCount + 1; echo htmlspecialchars($output); ?>
 				</div>
 				<img src="/img/tabletennispaddle.png">
 			</a> 
@@ -159,6 +165,7 @@ extract(pageCtrl());
 		<script type="text/javascript">
 			$('#paddle').click(function(e){
 				event.preventDefault();
+				$('#paddle').addClass('paddleRotate');
 				setTimeout(function(){
 					$('#ball').removeClass('ball');
 					$('#ball').addClass('ball2');
@@ -166,7 +173,7 @@ extract(pageCtrl());
 				setTimeout(function(){
 					var div = document.getElementById("dom-target");
 				    var myData = div.textContent;
-					window.location.href = "http://codeup.dev/pong.php?volleyCount=" + myData;
+					window.location.href = "http://codeup.dev/pong.php?volleyCount="+myData;
 				}, 2250);
 				$('#ball').toggleClass('ballMove');
 
