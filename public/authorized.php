@@ -2,9 +2,10 @@
 
 session_start();
 
-if (!$_SESSION['user_is_logged_in']) {
-	header("Location: /login.php");
-	die();
+require '../Auth.php';
+
+if (!Auth::check()) {
+	Auth::redirect('/login.php');
 }
 
 ?>
@@ -15,6 +16,9 @@ if (!$_SESSION['user_is_logged_in']) {
     <title>Authorized</title>
 </head>
 <body>
+	<?php include 'header.php'; ?>
+	<?php include 'navbar.php'; ?>
+	<br>
     You're Logged In, Enjoy!
     <br>
     <a href="http://codeup.dev/logout.php">Log Out</a>

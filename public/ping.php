@@ -1,8 +1,9 @@
 <?php 
 function pageCtrl() {
+	require '../Input.php';
 	$volleyCount = [];
-	if (isset($_GET['volleyCount'])) {
-		$volleyCount['volleyCount'] = $_GET['volleyCount'];
+	if (Input::has('volleyCount')) {
+		$volleyCount['volleyCount'] = Input::get('volleyCount');
 	} else {
 		$volleyCount['volleyCount'] = 0;
 	}
@@ -152,9 +153,7 @@ extract(pageCtrl());
 			<div class="bottomBarCourt"></div>
 			<img src="/img/tennisnet.png" class="tennisnet">
 			<a href="http://codeup.dev/pong.php?volleyCount=<?= $volleyCount + 1 ?>" class="paddle" id="paddle">
-				<div id="dom-target" style="display: none;">
-				    <?php $output = $volleyCount + 1; echo htmlspecialchars($output); ?>
-				</div>
+				<div id="dom-target" style="display: none;"><?php $output = $volleyCount + 1; echo htmlspecialchars($output); ?></div>
 				<img src="/img/tabletennispaddle.png">
 			</a> 
 			<a href="http://codeup.dev/ping.php?volleyCount=<?= $volleyCount = 0 ?>" class="ball" id="ball">

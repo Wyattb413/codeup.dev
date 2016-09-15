@@ -1,31 +1,25 @@
 <?php 
 	session_start();
 
+	require '../Input.php';
+	require '../Auth.php';
+
 	function pageCtrl() {
-		$correctUserName = 'SecretFBIAgent';
-		$correctPassword = '1212UndergroundBunker';	
 
-		if (isset($_SESSION['logged_in_user'])) {
-			header("Location: /authorized.php");
-			die();
+		if (Auth::check()) {
+			Auth::redirect('/authorized.php');
 		}
 
-		$userName = (isset($_POST['userName'])) ? $_POST['userName'] : '';
-		$password = (isset($_POST['password'])) ? $_POST['password'] : '';
-
-
-		if ($userName == $correctUserName && $password == $correctPassword) {
-			$_SESSION['logged_in_user'] = $userName;
-			$_SESSION['user_is_logged_in'] = true;
-			header("Location: /authorized.php");
-			die();
-		} else  if (!empty($_POST)){
-			echo 'Invalid UserName and/or Password';
+		if (Auth::attempt((Input::get('userName')), (Input::get('password')))) {
+			Auth::redirect('/authorized.php');
 		}
+			
+		$invalidMess = 'Invalid UserName and/or Password';
+		return ['invalidMessage' => $invalidMess];
 
 	}
 
-	pageCtrl();
+	extract(pageCtrl());
 
 ?>
 
@@ -35,6 +29,10 @@
 		<title>Login</title>
 	</head>
 	<body>
+		<?php include 'header.php'; ?>
+		<?php include 'navbar.php'; ?>
+		<br>
+		<h2><?= $invalidMessage; ?></h2>
 		<form action="/login.php" method="post">
 			User Name:
 			<input type="text" name="userName">

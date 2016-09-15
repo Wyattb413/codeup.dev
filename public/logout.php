@@ -2,24 +2,9 @@
 
 session_start();
 
+	require_once '../Auth.php';
 
-	function clearSession()
-		{
-		    // clear $_SESSION array
-		    session_unset();
-
-		    // delete session data on the server
-		    session_destroy();
-
-		    // ensure client is sent a new session cookie
-		    session_regenerate_id();
-
-		    // start a new session - session_destroy() ended our previous session so
-		    // if we want to store any new data in $_SESSION we must start a new one
-		    session_start();
-		}
-
-		clearSession();
+	Auth::logout();
 
 ?>
 <!DOCTYPE html>
@@ -28,13 +13,24 @@ session_start();
     <title>Authorized</title>
 </head>
 <body>
+	<?php include 'header.php'; ?>
+	<br>
     You're Logged Out
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <?php include 'footer.php'; ?>
 
 	<script type="text/javascript">
 		setTimeout(function(){
 			window.location.href = "http://codeup.dev/login.php";
-		}, 2000);
+		}, 1000);
 	</script>
 
 </body>
