@@ -6,17 +6,16 @@
 
 	function pageCtrl() {
 
-		if (Auth::check()) {
-			Auth::redirect('/authorized.php');
-		}
+			if (Auth::check()) {
+				Auth::redirect('/authorized.php');
+			}
 
-		if (Auth::attempt((Input::get('userName')), (Input::get('password')))) {
-			Auth::redirect('/authorized.php');
-		}
-			
-		$invalidMess = 'Invalid UserName and/or Password';
-		return ['invalidMessage' => $invalidMess];
-
+			if (Auth::attempt((Input::get('userName')), (Input::get('password')))) {
+				Auth::redirect('/authorized.php');
+			}
+				
+			$invalidMess = 'Invalid UserName and/or Password';
+			return ['invalidMessage' => $invalidMess];
 	}
 
 	extract(pageCtrl());
