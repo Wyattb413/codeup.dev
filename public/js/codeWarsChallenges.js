@@ -62,14 +62,67 @@
 
 // Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contains any char.
 
-function XO(str) {
-    var string = str;
-    var x = 'x';
-    var o = 'o';
-    string = string.toLowerCase();
-    if (string.includes(x) == string.includes(o)) {
-    	return true;
-    } else {
-    	return false;
-    }
-}
+// function XO(str) {
+//     var string = str;
+//     var x = 'x';
+//     var o = 'o';
+//     // var i = 0;
+//     var totalXs = 0;
+//     var totalOs = 0;
+//     string = string.toLowerCase();
+
+// 	for (var i = 0; i < string.length; i++) {
+//     	var result = string.charAt(i);
+//     	if (result == "x") {
+//     		totalXs += 1;
+//     	} else if (result == "o") {
+//     		totalOs += 1;
+//     	} else {
+//     		continue;
+//     	}
+// 	}
+//     	if (totalXs == totalOs) {
+//     		return true;
+// 	    } else {
+// 	    	return false;
+// 	    }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
