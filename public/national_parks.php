@@ -4,22 +4,20 @@ require '../php/park_migration_config.php';
 require '../php/db_connect.php';
 require '../php/Input.php';
 
-
-
-function pageCtrl($dbc) 
+function pageCtrl($dbc)
 {
 	//Limits pages for table
 	$limit = 5;
 
 	$sql = 'SELECT * FROM national_parks';
-	//Using the static class Input from ../php/Input.php, gets page number from get request  
+	//Using the static class Input from ../php/Input.php, gets page number from get request
 	//and if the number passed in the get request is less than zero, it replaces it with one
 	$page = (Input::get('page', 1) < 0) ? 1 : Input::get('page', 1);
 
 	$currentPage = Input::get('page');
 	$offset = ($page - 1) * ($limit);
 	//Appeneds to query stated above to limit number of results and the offset
-	$sql .= " LIMIT :limit OFFSET :offset";	
+	$sql .= " LIMIT :limit OFFSET :offset";
 
 	$stmt = $dbc->prepare($sql);
 	$stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
@@ -39,40 +37,49 @@ function pageCtrl($dbc)
 
 	$fields = array('parkName', 'parkLocation', 'dateEstablished', 'areaInAcres', 'description');
 
-	$error = false;
+	$errors = [];
 
-	if(isset($_POST['Submit'])) {
-		foreach($fields as $fieldname) {
-			if(!isset($_POST[$fieldname]) || empty($_POST[$fieldname])) {
-				echo 'Input Field ' . $fieldname . ' Is Empty! <br>';
-				$error = true;
-			} 
-		}
-	}
-
-	if(!$error) {
 		if(Input::hasPost()) {
-			$parkName = Input::get('parkName');
-			$parkLocation = Input::get('parkLocation');
-			$dateEstablished = Input::get('dateEstablished');
-			$areaInAcres = Input::get('areaInAcres');
-			$description = Input::get('description');
+			try {
+				$parkName = Input::getString('parkName');
+			} catch (Exception $e) {
+				$errors['parkName'] = $e->getMessage();
+			}
+			try {
+				$parkLocation = Input::getString('parkLocation');
+			} catch (Exception $e) {
+				$errors['parkLocation'] = $e->getMessage();
+			}
+			try {
+				$dateEstablished = Input::getString('dateEstablished');
+			} catch (Exception $e) {
+				$errors['dateEstablished'] = $e->getMessage();
+			}
+			try {
+				$areaInAcres = Input::getNumber('areaInAcres');
+			} catch (Exception $e) {
+				$errors['areaInAcres'] = $e->getMessage();
+			}
+			try {
+				$description = Input::getString('description');
+			} catch (Exception $e) {
+				$errors['description'] = $e->getMessage();
+			}
 			$sql = "INSERT INTO national_parks (name, location, date_established, area_in_acres, description)
 			VALUES (:parkName, :parkLocation, :dateEstablished, :areaInAcres, :description)";
 			$stmt = $dbc->prepare($sql);
-			$stmt->execute(array(':parkName' => $parkName, ':parkLocation' => $parkLocation, ':dateEstablished' => $dateEstablished, ':areaInAcres' => $areaInAcres, ':description' => $description));
+
+				if(empty($errors)) {
+					$stmt->execute(array(':parkName' => $parkName, ':parkLocation' => $parkLocation, ':dateEstablished' => $dateEstablished, ':areaInAcres' => $areaInAcres, ':description' => $description));
+			}
 		}
-	}
 
 	return [
 		'currentPage' => $currentPage,
 		'parks' => $parks,
+		'totalPages' => $totalPages,
 		'name' => $name,
-		'location' => $location,
-		'dateEstablished' => $dateEstablished,
-		'areaInAcres' => $areaInAcres,
-		'description' => $description,
-		'totalPages' => $totalPages
+		'errors' => $errors
 	];
 }
 
@@ -110,11 +117,11 @@ extract(pageCtrl($dbc));
 			table {
 			}
 			thead {
-				background-color: #566246; 
+				background-color: #566246;
 				color: white;
 			}
 			tbody {
-				background-color: #111111; 
+				background-color: #111111;
 				color: #288c85;
 			}
 			.content {
@@ -186,22 +193,37 @@ extract(pageCtrl($dbc));
 				<div class="form-group">
 					<label for="parkName">Park Name:</label>
 					<input type="text" class="form-control" id="parkName" name="parkName" placeholder="Enter Park Name Here">
+					<?php if (isset($errors['parkName'])) : ?>
+							<?= $errors['parkName'] ?>
+					<?php endif ?>
 				</div>
 				<div class="form-group">
 					<label for="parkLocation">Park Location:</label>
 					<input type="text" class="form-control" id="parkLocation" name="parkLocation" placeholder="Enter Park Location Here">
+					<?php if (isset($errors['parkLocation'])) : ?>
+							<?= $errors['parkLocation'] ?>
+					<?php endif ?>
 				</div>
 				<div class="form-group">
 					<label for="dateEstablished">Date Established:</label>
-					<input type="text" class="form-control" id="dateEstablished" name="dateEstablished" placeholder="Enter Date Established Here Ex: YYYY-MM-DD">
+					<input type="date" class="form-control" id="dateEstablished" name="dateEstablished" placeholder="Enter Date Established Here Ex: YYYY-MM-DD">
+					<?php if (isset($errors['dateEstablished'])) : ?>
+							<?= $errors['dateEstablished'] ?>
+					<?php endif ?>
 				</div>
 				<div class="form-group">
 					<label for="areaInAcres">Area In Acres:</label>
 					<input type="text" class="form-control" id="areaInAcres" name="areaInAcres" placeholder="Enter The Area Of The Park In Acres">
+					<?php if (isset($errors['areaInAcres'])) : ?>
+							<?= $errors['areaInAcres'] ?>
+					<?php endif ?>
 				</div>
 				<div class="form-group">
 					<label for="description">Description:</label>
 					<input type="text" class="form-control" id="description" name="description" placeholder="Enter A Brief Description Of The Park">
+					<?php if (isset($errors['description'])) : ?>
+							<?= $errors['description'] ?>
+					<?php endif ?>
 				</div>
 				<button type="submit" class="btn btn-default customButton">Add Park</button>
 			</form>

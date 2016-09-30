@@ -1,6 +1,6 @@
-<?php 
+<?php
 function pageCtrl() {
-	require '../Input.php';
+	require '../php/Input.php';
 	$volleyCount = [];
 	if (Input::has('volleyCount')) {
 		$volleyCount['volleyCount'] = Input::get('volleyCount');
@@ -102,7 +102,7 @@ extract(pageCtrl());
 				width: 1250px;
 				height: 50px;
 				border-top: 5px solid white;
-				background-color: green;				
+				background-color: green;
 			}
 
 			.leftBoxCourt {
@@ -155,10 +155,10 @@ extract(pageCtrl());
 			<a href="http://codeup.dev/pong.php?volleyCount=<?= $volleyCount + 1 ?>" class="paddle" id="paddle">
 				<div id="dom-target" style="display: none;"><?php $output = $volleyCount + 1; echo htmlspecialchars($output); ?></div>
 				<img src="/img/tabletennispaddle.png">
-			</a> 
+			</a>
 			<a href="http://codeup.dev/ping.php?volleyCount=<?= $volleyCount = 0 ?>" class="ball" id="ball">
 				<img src="/img/pingpongBall2.png">
-			</a> 
+			</a>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script type="text/javascript">

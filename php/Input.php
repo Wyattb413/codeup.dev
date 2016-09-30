@@ -31,6 +31,41 @@ class Input
         return $value;
     }
 
+    public static function getString($key)
+    {
+      $value = self::get($key);
+      if ($value == null) {
+        throw new Exception($key . ' Cannot Be Empty');
+      }
+      if (gettype($value) != 'string') {
+        throw new Exception($key . ' Must Be A String');
+      }
+      return $value;
+    }
+
+    public static function getNumber($key)
+    {
+      $value = self::get($key);
+      if ($value == null) {
+        throw new Exception($key . ' Cannot Be Empty');
+      }
+      if (!is_numeric($value)) {
+        throw new Exception($key . ' Must Be A Number');
+      }
+      return $value;
+    }
+
+    public static function getDate($key)
+    {
+      $value = self::get($key);
+      $verify_arr = explode('-', $value);
+      if (checkdate($verify_arr[0], $verify_arr[1], $verify_arr[2])) {
+        return $value;
+      } else {
+        throw new Exception($key . ' Is Not A Valid Date');
+      }
+    }
+
     ///////////////////////////////////////////////////////////////////////////
     //                      DO NOT EDIT ANYTHING BELOW!!                     //
     // The Input class should not ever be instantiated, so we prevent the    //

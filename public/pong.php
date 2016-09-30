@@ -1,6 +1,6 @@
-<?php 
+<?php
 function pageCtrl() {
-	require '../Input.php';
+	require '../php/Input.php';
 	$volleyCount = [];
 	if (Input::has('volleyCount')) {
 		$volleyCount['volleyCount'] = Input::get('volleyCount');
@@ -135,7 +135,7 @@ extract(pageCtrl());
 				width: 1250px;
 				height: 50px;
 				border-top: 5px solid white;
-				background-color: green;				
+				background-color: green;
 			}
 
 			.leftBoxCourt {
