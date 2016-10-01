@@ -41,22 +41,22 @@ function pageCtrl($dbc)
 
 		if(Input::hasPost()) {
 			try {
-				$parkName = Input::getString('parkName');
+				$parkName = Input::getString('parkName', 1, 240);
 			} catch (Exception $e) {
 				$errors['parkName'] = $e->getMessage();
 			}
 			try {
-				$parkLocation = Input::getString('parkLocation');
+				$parkLocation = Input::getString('parkLocation', 1, 240);
 			} catch (Exception $e) {
 				$errors['parkLocation'] = $e->getMessage();
 			}
 			try {
-				$dateEstablished = Input::getString('dateEstablished');
+				$dateEstablished = Input::getDate('dateEstablished');
 			} catch (Exception $e) {
 				$errors['dateEstablished'] = $e->getMessage();
 			}
 			try {
-				$areaInAcres = Input::getNumber('areaInAcres');
+				$areaInAcres = Input::getNumber('areaInAcres', 0, 8960000);
 			} catch (Exception $e) {
 				$errors['areaInAcres'] = $e->getMessage();
 			}
@@ -70,7 +70,7 @@ function pageCtrl($dbc)
 			$stmt = $dbc->prepare($sql);
 
 				if(empty($errors)) {
-					$stmt->execute(array(':parkName' => $parkName, ':parkLocation' => $parkLocation, ':dateEstablished' => $dateEstablished, ':areaInAcres' => $areaInAcres, ':description' => $description));
+					$stmt->execute(array(':parkName' => $parkName, ':parkLocation' => $parkLocation, ':dateEstablished' => $dateEstablished->format('Y-m-d'), ':areaInAcres' => $areaInAcres, ':description' => $description));
 			}
 		}
 
@@ -206,7 +206,7 @@ extract(pageCtrl($dbc));
 				</div>
 				<div class="form-group">
 					<label for="dateEstablished">Date Established:</label>
-					<input type="date" class="form-control" id="dateEstablished" name="dateEstablished" placeholder="Enter Date Established Here Ex: YYYY-MM-DD">
+					<input type="text" class="form-control" id="dateEstablished" name="dateEstablished" placeholder="Enter Date Established Here Ex: YYYY-MM-DD">
 					<?php if (isset($errors['dateEstablished'])) : ?>
 							<?= $errors['dateEstablished'] ?>
 					<?php endif ?>
